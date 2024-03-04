@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="submit"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Registration Form</h2>
+        <form id="registrationForm" method="post">
+            {% csrf_token %}
+            <label for="id_full_name">Full Name:</label><br>
+            <input type="text" id="id_full_name" name="full_name" required><br>
+            
+            <label for="id_email">Email Address:</label><br>
+            <input type="email" id="id_email" name="email" required><br>
+            
+            <label for="id_phone_number">Phone Number:</label><br>
+            <input type="tel" id="id_phone_number" name="phone_number" pattern="[0-9]+" required><br>
+            
+            <label for="id_event_sessions">Event Sessions:</label><br>
+            <select id="id_event_sessions" name="event_sessions" required>
+                <option value="" disabled selected>Select session</option>
+                <option value="10-11am">10-11am</option>
+                <option value="11-12am">11-12am</option>
+                <option value="12-01pm">12-01pm</option>
+                <option value="03-04pm">03-04pm</option>
+                <option value="04-05pm">04-05pm</option>
+            </select><br>
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <script>
+        // Client-side validation
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var fullName = document.getElementById('id_full_name').value;
+            var email = document.getElementById('id_email').value;
+            var phoneNumber = document.getElementById('id_phone_number').value;
+            var eventSessions = document.getElementById('id_event_sessions').value;
+
+            // Email validation
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Phone number validation
+            if (!isValidPhoneNumber(phoneNumber)) {
+                alert('Please enter a valid phone number.');
+                event.preventDefault();
+                return false;
+            }
+
+            // Other validations can be added here as needed
+
+            return true;
+        });
+
+        function isValidEmail(email) {
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function isValidPhoneNumber(phoneNumber) {
+            var phonePattern = /^\d+$/;
+            return phonePattern.test(phoneNumber);
+        }
+    </script>
+</body>
+</html>

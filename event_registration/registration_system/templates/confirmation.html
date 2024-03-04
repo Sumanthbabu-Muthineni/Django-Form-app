@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button a {
+            text-decoration: none;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .back-button a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Confirmation</h2>
+        <p>Thank you for registering!</p>
+        <p>Registration Details:</p>
+        <ul>
+            <li><strong>Full Name:</strong> {{ registration.full_name }}</li>
+            <li><strong>Email Address:</strong> {{ registration.email }}</li>
+            <li><strong>Phone Number:</strong> {{ registration.phone_number }}</li>
+            <li><strong>Event Sessions:</strong> {{ registration.event_sessions }}</li>
+        </ul>
+        <p>Your registration ID is: {{ registration.id }}</p>
+
+        <div class="back-button">
+            <a href="/">Back to Registration Page</a>
+        </div>
+    </div>
+</body>
+</html>
