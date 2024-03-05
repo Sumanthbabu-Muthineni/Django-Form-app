@@ -116,8 +116,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.example.com'  # Your SMTP server host
 EMAIL_PORT = 587  # SMTP server port
 EMAIL_USE_TLS = True  # Whether to use TLS encryption
-EMAIL_HOST_USER = 'sumanthbabu868@gmail.com'  # Your SMTP username
-EMAIL_HOST_PASSWORD = 'Sumanth@2001'  # Your SMTP password
+EMAIL_HOST_USER =  # Your SMTP username
+EMAIL_HOST_PASSWORD =   # Your SMTP password
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
