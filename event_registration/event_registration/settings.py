@@ -117,7 +117,7 @@ EMAIL_HOST = 'smtp.gmail.com'   # Your SMTP server host
 EMAIL_PORT = 587  # SMTP server port
 EMAIL_USE_TLS = True  # Whether to use TLS encryption
 EMAIL_HOST_USER = 'sumanthbabu.muthineni@gmail.com'  # Your SMTP username
-EMAIL_HOST_PASSWORD = ''  # add your app specific password from gmail
+EMAIL_HOST_PASSWORD = 'ioaxmijkrkbbxryr'  # add your app specific password from gmail
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
